@@ -1,0 +1,28 @@
+<table class='table table-hover'>
+  <% @logs.each do |log| %>
+    <tr class=<%= class_by_status(log) %>>
+      <td class='log-date'>
+        <a href="#" title=<%=log.created_at.to_s %>><%= log.created_at.strftime("%d.%m.%Y %H:%M:%S") %></a>
+      </td>
+      <td class='log-description'>
+        <div class='log-name'><%= log.event_type.name %>
+        <div class='log-messages' id='log-messages-for-<%= log.id %>'>
+          <ul>
+            <% log.events.each do |event| %>
+              <li><%= event.message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <td class='log-host'>
+          <%= log.log_host.name %>
+        </td>
+        <td class='log-message-count'>
+          <% if log.events.present? %>
+            <a class='toggle-log-messages' data-log-id='<%= log.id %>'><%= pluralize(log.events.size, 'message') %></a>
+          <% end %>
+        </td>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

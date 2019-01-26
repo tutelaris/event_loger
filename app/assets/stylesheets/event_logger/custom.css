@@ -1,0 +1,19 @@
+td.log-date {
+  width: 130px;
+}
+
+td.log-message-count {
+  width: 140px;
+}
+
+td.log-exception {
+  width: 110px;
+}
+
+div.log-messages {
+  display: none;
+
+}
+a.toggle-log-messages {
+  cursor: pointer;
+}
