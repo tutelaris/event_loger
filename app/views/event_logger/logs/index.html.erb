@@ -1,6 +1,6 @@
 <table class='table table-hover'>
   <% @logs.each do |log| %>
-    <tr class=<%= class_by_status(log) %>>
+    <tr class=<%= log.has_error? ? "danger" : "default" %>>
       <td class='log-date'>
         <a href="#" title=<%=log.created_at.to_s %>><%= log.created_at.strftime("%d.%m.%Y %H:%M:%S") %></a>
       </td>
