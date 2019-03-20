@@ -41,7 +41,7 @@ end
 ## Usage
 Modify your method like this:
 ```ruby
-def new_latte_with_vodka
+def new_coctail
   MyEventLogging.event_logger.log("localhost:3000", :new_coctail) do
     @vodka = Vodka.new
     @topping = Topping.new
