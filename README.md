@@ -42,7 +42,7 @@ end
 Modify your method like this:
 ```ruby
 def new_coctail
-  MyEventLogging.event_logger.log("localhost:3000", :new_coctail) do
+  MyEventLogger.event_logger.log("localhost:3000", :new_coctail) do
     @vodka = Vodka.new
     @topping = Topping.new
     if @client.drives_car?
